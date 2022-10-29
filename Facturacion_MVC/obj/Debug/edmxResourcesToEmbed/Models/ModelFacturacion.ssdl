@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ModelFacturas.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TBLCATEGORIA_PROD">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StrDescripcion" Type="varchar" MaxLength="60" />
+    <Property Name="DtmFechaModifica" Type="datetime" />
+    <Property Name="StrUsuarioModifico" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="TBLCLIENTES">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StrNombre" Type="varchar" MaxLength="55" />
+    <Property Name="NumDocumento" Type="bigint" />
+    <Property Name="StrDireccion" Type="varchar" MaxLength="70" />
+    <Property Name="StrTelefono" Type="varchar" MaxLength="30" />
+    <Property Name="StrEmail" Type="varchar" MaxLength="50" />
+    <Property Name="DtmFechaModifica" Type="datetime" />
+    <Property Name="StrUsuarioModifica" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="TBLDETALLE_FACTURA">
+    <Key>
+      <PropertyRef Name="IdDetalle" />
+    </Key>
+    <Property Name="IdDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdFactura" Type="int" Nullable="false" />
+    <Property Name="NumCantidad" Type="int" />
+    <Property Name="IdProducto" Type="int" Nullable="false" />
+    <Property Name="NumPrecio" Type="float" />
+  </EntityType>
+  <EntityType Name="TBLEMPLEADO">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumDocumento" Type="bigint" Nullable="false" />
+    <Property Name="StrDireccion" Type="varchar" MaxLength="100" />
+    <Property Name="StrTelefono" Type="varchar" MaxLength="50" />
+    <Property Name="StrEmail" Type="varchar" MaxLength="50" />
+    <Property Name="IdRolEmpleado" Type="int" />
+    <Property Name="DtmIngreso" Type="datetime" />
+    <Property Name="DtmRetiro" Type="datetime" />
+    <Property Name="strDatosAdicionales" Type="nvarchar(max)" />
+    <Property Name="DtmFechaModifica" Type="datetime" />
+    <Property Name="StrUsuarioModifico" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLESTADO_FACTURA">
+    <Key>
+      <PropertyRef Name="IdEstadoFactura" />
+    </Key>
+    <Property Name="IdEstadoFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StrDescripcion" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TBLFACTURA">
+    <Key>
+      <PropertyRef Name="IdFactura" />
+    </Key>
+    <Property Name="IdFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DtmFecha" Type="datetime" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="NumDescuento" Type="float" />
+    <Property Name="NumImpuesto" Type="float" />
+    <Property Name="NumValorTotal" Type="float" />
+    <Property Name="IdEstado" Type="int" />
+    <Property Name="DtmFechaModifica" Type="datetime" />
+    <Property Name="StrUsuarioModifica" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="TBLPRODUCTO">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StrNombre" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="StrCodigo" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NumPrecioCompra" Type="float" Nullable="false" />
+    <Property Name="NumPrecioVenta" Type="float" Nullable="false" />
+    <Property Name="IdCategoria" Type="int" Nullable="false" />
+    <Property Name="StrDetalle" Type="varchar" MaxLength="50" />
+    <Property Name="strFoto" Type="varchar" MaxLength="50" />
+    <Property Name="NumStock" Type="int" />
+    <Property Name="DtmFechaModifica" Type="datetime" Nullable="false" />
+    <Property Name="StrUsuarioModifica" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLROLES">
+    <Key>
+      <PropertyRef Name="IdRolEmpleado" />
+    </Key>
+    <Property Name="IdRolEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StrDescripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLSEGURIDAD">
+    <Key>
+      <PropertyRef Name="IdSeguridad" />
+    </Key>
+    <Property Name="IdSeguridad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="StrUsuario" Type="varchar" MaxLength="50" />
+    <Property Name="StrClave" Type="varchar" MaxLength="50" />
+    <Property Name="DtmFechaModifica" Type="datetime" />
+    <Property Name="StrUsuarioModifico" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__TBLPRODUC__IdCat__440B1D61">
+    <End Role="TBLCATEGORIA_PROD" Type="Self.TBLCATEGORIA_PROD" Multiplicity="1" />
+    <End Role="TBLPRODUCTO" Type="Self.TBLPRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCATEGORIA_PROD">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="TBLPRODUCTO">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDETALLE_FACTURA_TBLFACTURA">
+    <End Role="TBLFACTURA" Type="Self.TBLFACTURA" Multiplicity="1" />
+    <End Role="TBLDETALLE_FACTURA" Type="Self.TBLDETALLE_FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLFACTURA">
+        <PropertyRef Name="IdFactura" />
+      </Principal>
+      <Dependent Role="TBLDETALLE_FACTURA">
+        <PropertyRef Name="IdFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDETALLE_FACTURA_TBLPRODUCTO">
+    <End Role="TBLPRODUCTO" Type="Self.TBLPRODUCTO" Multiplicity="1" />
+    <End Role="TBLDETALLE_FACTURA" Type="Self.TBLDETALLE_FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLPRODUCTO">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="TBLDETALLE_FACTURA">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLEMPLEADO_TBLROLES">
+    <End Role="TBLROLES" Type="Self.TBLROLES" Multiplicity="0..1" />
+    <End Role="TBLEMPLEADO" Type="Self.TBLEMPLEADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLROLES">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Principal>
+      <Dependent Role="TBLEMPLEADO">
+        <PropertyRef Name="IdRolEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLFACTURA_TBLCLIENTES">
+    <End Role="TBLCLIENTES" Type="Self.TBLCLIENTES" Multiplicity="1" />
+    <End Role="TBLFACTURA" Type="Self.TBLFACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLCLIENTES">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="TBLFACTURA">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLFACTURA_TBLEMPLEADO">
+    <End Role="TBLEMPLEADO" Type="Self.TBLEMPLEADO" Multiplicity="1" />
+    <End Role="TBLFACTURA" Type="Self.TBLFACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLEMPLEADO">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="TBLFACTURA">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLFACTURA_TBLESTADO_FACTURA">
+    <End Role="TBLESTADO_FACTURA" Type="Self.TBLESTADO_FACTURA" Multiplicity="0..1" />
+    <End Role="TBLFACTURA" Type="Self.TBLFACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLESTADO_FACTURA">
+        <PropertyRef Name="IdEstadoFactura" />
+      </Principal>
+      <Dependent Role="TBLFACTURA">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLSEGURIDAD_TBLEMPLEADO">
+    <End Role="TBLEMPLEADO" Type="Self.TBLEMPLEADO" Multiplicity="1" />
+    <End Role="TBLSEGURIDAD" Type="Self.TBLSEGURIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLEMPLEADO">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="TBLSEGURIDAD">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelFacturasStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLCATEGORIA_PROD" EntityType="Self.TBLCATEGORIA_PROD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLCLIENTES" EntityType="Self.TBLCLIENTES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLDETALLE_FACTURA" EntityType="Self.TBLDETALLE_FACTURA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLEMPLEADO" EntityType="Self.TBLEMPLEADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLESTADO_FACTURA" EntityType="Self.TBLESTADO_FACTURA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLFACTURA" EntityType="Self.TBLFACTURA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPRODUCTO" EntityType="Self.TBLPRODUCTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLROLES" EntityType="Self.TBLROLES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLSEGURIDAD" EntityType="Self.TBLSEGURIDAD" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__TBLPRODUC__IdCat__440B1D61" Association="Self.FK__TBLPRODUC__IdCat__440B1D61">
+      <End Role="TBLCATEGORIA_PROD" EntitySet="TBLCATEGORIA_PROD" />
+      <End Role="TBLPRODUCTO" EntitySet="TBLPRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDETALLE_FACTURA_TBLFACTURA" Association="Self.FK_TBLDETALLE_FACTURA_TBLFACTURA">
+      <End Role="TBLFACTURA" EntitySet="TBLFACTURA" />
+      <End Role="TBLDETALLE_FACTURA" EntitySet="TBLDETALLE_FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDETALLE_FACTURA_TBLPRODUCTO" Association="Self.FK_TBLDETALLE_FACTURA_TBLPRODUCTO">
+      <End Role="TBLPRODUCTO" EntitySet="TBLPRODUCTO" />
+      <End Role="TBLDETALLE_FACTURA" EntitySet="TBLDETALLE_FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLEMPLEADO_TBLROLES" Association="Self.FK_TBLEMPLEADO_TBLROLES">
+      <End Role="TBLROLES" EntitySet="TBLROLES" />
+      <End Role="TBLEMPLEADO" EntitySet="TBLEMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLFACTURA_TBLCLIENTES" Association="Self.FK_TBLFACTURA_TBLCLIENTES">
+      <End Role="TBLCLIENTES" EntitySet="TBLCLIENTES" />
+      <End Role="TBLFACTURA" EntitySet="TBLFACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLFACTURA_TBLEMPLEADO" Association="Self.FK_TBLFACTURA_TBLEMPLEADO">
+      <End Role="TBLEMPLEADO" EntitySet="TBLEMPLEADO" />
+      <End Role="TBLFACTURA" EntitySet="TBLFACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLFACTURA_TBLESTADO_FACTURA" Association="Self.FK_TBLFACTURA_TBLESTADO_FACTURA">
+      <End Role="TBLESTADO_FACTURA" EntitySet="TBLESTADO_FACTURA" />
+      <End Role="TBLFACTURA" EntitySet="TBLFACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLSEGURIDAD_TBLEMPLEADO" Association="Self.FK_TBLSEGURIDAD_TBLEMPLEADO">
+      <End Role="TBLEMPLEADO" EntitySet="TBLEMPLEADO" />
+      <End Role="TBLSEGURIDAD" EntitySet="TBLSEGURIDAD" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

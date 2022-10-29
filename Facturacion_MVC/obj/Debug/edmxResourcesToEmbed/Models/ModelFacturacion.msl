@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelFacturasStoreContainer" CdmEntityContainer="BDFacturacion">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ModelFacturas.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLCATEGORIA_PROD">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLCATEGORIA_PROD">
+        <MappingFragment StoreEntitySet="TBLCATEGORIA_PROD">
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="StrDescripcion" ColumnName="StrDescripcion" />
+          <ScalarProperty Name="DtmFechaModifica" ColumnName="DtmFechaModifica" />
+          <ScalarProperty Name="StrUsuarioModifico" ColumnName="StrUsuarioModifico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLCLIENTES">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLCLIENTES">
+        <MappingFragment StoreEntitySet="TBLCLIENTES">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="StrNombre" ColumnName="StrNombre" />
+          <ScalarProperty Name="NumDocumento" ColumnName="NumDocumento" />
+          <ScalarProperty Name="StrDireccion" ColumnName="StrDireccion" />
+          <ScalarProperty Name="StrTelefono" ColumnName="StrTelefono" />
+          <ScalarProperty Name="StrEmail" ColumnName="StrEmail" />
+          <ScalarProperty Name="DtmFechaModifica" ColumnName="DtmFechaModifica" />
+          <ScalarProperty Name="StrUsuarioModifica" ColumnName="StrUsuarioModifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLDETALLE_FACTURA">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLDETALLE_FACTURA">
+        <MappingFragment StoreEntitySet="TBLDETALLE_FACTURA">
+          <ScalarProperty Name="IdDetalle" ColumnName="IdDetalle" />
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+          <ScalarProperty Name="NumCantidad" ColumnName="NumCantidad" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="NumPrecio" ColumnName="NumPrecio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLEMPLEADO">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLEMPLEADO">
+        <MappingFragment StoreEntitySet="TBLEMPLEADO">
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="NumDocumento" ColumnName="NumDocumento" />
+          <ScalarProperty Name="StrDireccion" ColumnName="StrDireccion" />
+          <ScalarProperty Name="StrTelefono" ColumnName="StrTelefono" />
+          <ScalarProperty Name="StrEmail" ColumnName="StrEmail" />
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+          <ScalarProperty Name="DtmIngreso" ColumnName="DtmIngreso" />
+          <ScalarProperty Name="DtmRetiro" ColumnName="DtmRetiro" />
+          <ScalarProperty Name="strDatosAdicionales" ColumnName="strDatosAdicionales" />
+          <ScalarProperty Name="DtmFechaModifica" ColumnName="DtmFechaModifica" />
+          <ScalarProperty Name="StrUsuarioModifico" ColumnName="StrUsuarioModifico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLESTADO_FACTURA">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLESTADO_FACTURA">
+        <MappingFragment StoreEntitySet="TBLESTADO_FACTURA">
+          <ScalarProperty Name="IdEstadoFactura" ColumnName="IdEstadoFactura" />
+          <ScalarProperty Name="StrDescripcion" ColumnName="StrDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLFACTURA">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLFACTURA">
+        <MappingFragment StoreEntitySet="TBLFACTURA">
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+          <ScalarProperty Name="DtmFecha" ColumnName="DtmFecha" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="NumDescuento" ColumnName="NumDescuento" />
+          <ScalarProperty Name="NumImpuesto" ColumnName="NumImpuesto" />
+          <ScalarProperty Name="NumValorTotal" ColumnName="NumValorTotal" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="DtmFechaModifica" ColumnName="DtmFechaModifica" />
+          <ScalarProperty Name="StrUsuarioModifica" ColumnName="StrUsuarioModifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPRODUCTO">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLPRODUCTO">
+        <MappingFragment StoreEntitySet="TBLPRODUCTO">
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="StrNombre" ColumnName="StrNombre" />
+          <ScalarProperty Name="StrCodigo" ColumnName="StrCodigo" />
+          <ScalarProperty Name="NumPrecioCompra" ColumnName="NumPrecioCompra" />
+          <ScalarProperty Name="NumPrecioVenta" ColumnName="NumPrecioVenta" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="StrDetalle" ColumnName="StrDetalle" />
+          <ScalarProperty Name="strFoto" ColumnName="strFoto" />
+          <ScalarProperty Name="NumStock" ColumnName="NumStock" />
+          <ScalarProperty Name="DtmFechaModifica" ColumnName="DtmFechaModifica" />
+          <ScalarProperty Name="StrUsuarioModifica" ColumnName="StrUsuarioModifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLROLES">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLROLES">
+        <MappingFragment StoreEntitySet="TBLROLES">
+          <ScalarProperty Name="IdRolEmpleado" ColumnName="IdRolEmpleado" />
+          <ScalarProperty Name="StrDescripcion" ColumnName="StrDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLSEGURIDAD">
+      <EntityTypeMapping TypeName="ModelFacturas.TBLSEGURIDAD">
+        <MappingFragment StoreEntitySet="TBLSEGURIDAD">
+          <ScalarProperty Name="IdSeguridad" ColumnName="IdSeguridad" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="StrUsuario" ColumnName="StrUsuario" />
+          <ScalarProperty Name="StrClave" ColumnName="StrClave" />
+          <ScalarProperty Name="DtmFechaModifica" ColumnName="DtmFechaModifica" />
+          <ScalarProperty Name="StrUsuarioModifico" ColumnName="StrUsuarioModifico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

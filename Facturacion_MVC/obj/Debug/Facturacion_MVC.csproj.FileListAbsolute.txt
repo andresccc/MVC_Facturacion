@@ -84,3 +84,7 @@ C:\Users\Administrador\Desktop\EstudioHP\Facturacion_MVC\Facturacion_MVC\obj\Deb
 C:\Users\Administrador\Desktop\EstudioHP\Facturacion_MVC\Facturacion_MVC\obj\Debug\Facturacion_MVC.csproj.CopyComplete
 C:\Users\Administrador\Desktop\EstudioHP\Facturacion_MVC\Facturacion_MVC\obj\Debug\Facturacion_MVC.dll
 C:\Users\Administrador\Desktop\EstudioHP\Facturacion_MVC\Facturacion_MVC\obj\Debug\Facturacion_MVC.pdb
+C:\Users\Administrador\Desktop\EstudioHP\Facturacion_MVC\Facturacion_MVC\bin\EntityFramework.dll
+C:\Users\Administrador\Desktop\EstudioHP\Facturacion_MVC\Facturacion_MVC\bin\EntityFramework.SqlServer.dll
+C:\Users\Administrador\Desktop\EstudioHP\Facturacion_MVC\Facturacion_MVC\bin\EntityFramework.xml
+C:\Users\Administrador\Desktop\EstudioHP\Facturacion_MVC\Facturacion_MVC\bin\EntityFramework.SqlServer.xml
