@@ -11,7 +11,8 @@ namespace Facturacion_MVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLEMPLEADO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,16 +21,29 @@ namespace Facturacion_MVC.Models
             this.TBLFACTURA = new HashSet<TBLFACTURA>();
             this.TBLSEGURIDAD = new HashSet<TBLSEGURIDAD>();
         }
-    
+        [Key]
         public int IdEmpleado { get; set; }
+        [Display(Name = "Nombre")]
         public string strNombre { get; set; }
+        [Display(Name = "Documento")]
         public long NumDocumento { get; set; }
+        [Display(Name = "Direccion")]
         public string StrDireccion { get; set; }
+        [Display(Name = "Telefono")]
         public string StrTelefono { get; set; }
+        [Display(Name = "Correo")]
         public string StrEmail { get; set; }
+        [Display(Name = "Rol Empleado")]
         public Nullable<int> IdRolEmpleado { get; set; }
+        [Display(Name = "Fecha ingreso")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DtmIngreso { get; set; }
+        [Display(Name = "Fecha retiro")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DtmRetiro { get; set; }
+        [Display(Name = "Datos adicionales")]
         public string strDatosAdicionales { get; set; }
         public Nullable<System.DateTime> DtmFechaModifica { get; set; }
         public string StrUsuarioModifico { get; set; }
