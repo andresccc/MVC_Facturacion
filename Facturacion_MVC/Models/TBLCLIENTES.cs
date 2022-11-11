@@ -11,7 +11,8 @@ namespace Facturacion_MVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLCLIENTES
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,18 @@ namespace Facturacion_MVC.Models
         {
             this.TBLFACTURA = new HashSet<TBLFACTURA>();
         }
-    
+
+        [Key]
         public int IdCliente { get; set; }
+        [Display(Name = "Nombre")]
         public string StrNombre { get; set; }
+        [Display(Name = "Documento")]
         public Nullable<long> NumDocumento { get; set; }
+        [Display(Name = "Direccion")]
         public string StrDireccion { get; set; }
+        [Display(Name = "Telefono")]
         public string StrTelefono { get; set; }
+        [Display(Name = "Correo")]
         public string StrEmail { get; set; }
         public Nullable<System.DateTime> DtmFechaModifica { get; set; }
         public string StrUsuarioModifica { get; set; }

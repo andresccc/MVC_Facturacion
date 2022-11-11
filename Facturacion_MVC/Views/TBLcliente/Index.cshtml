@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Facturacion_MVC.Models.TBLCLIENTES>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutFacturacion.cshtml";
+}
+
+<h2>ADMIN CLIENTES</h2>
+
+<div class="well">
+    <a href="~/TBLcliente/Nuevo" class="btn btn-success">Nuevo cliente</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Documento</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>ACCIONES</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StrNombre</td>
+            <td>@item.NumDocumento</td>
+            <td>@item.StrTelefono</td>
+            <td>@item.StrEmail</td>
+            <td><a href="~/TBLcliente/Editar/@item.IdCliente" class="btn btn-info">Editar</a>  <a href="~/TBLcliente/Borrar/@item.IdCliente" class="btn btn-danger">Borrar</a></td>
+        </tr>
+    }
+</table>

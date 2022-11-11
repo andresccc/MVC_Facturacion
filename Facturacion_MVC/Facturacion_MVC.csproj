@@ -130,7 +130,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
+    <Compile Include="Controllers\TBLclienteController.cs" />
     <Compile Include="Controllers\TBLempleadoController.cs" />
+    <Compile Include="Controllers\TBLproductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +240,13 @@
     <Content Include="Views\Shared\_LayoutFacturacion.cshtml" />
     <Content Include="Views\TBLempleado\Index.cshtml" />
     <Content Include="Views\TBLempleado\Nuevo.cshtml" />
+    <Content Include="Views\TBLempleado\Editar.cshtml" />
+    <Content Include="Views\TBLcliente\Index.cshtml" />
+    <Content Include="Views\TBLcliente\Nuevo.cshtml" />
+    <Content Include="Views\TBLcliente\Editar.cshtml" />
+    <Content Include="Views\TBLproducto\Index.cshtml" />
+    <Content Include="Views\TBLproducto\Nuevo.cshtml" />
+    <Content Include="Views\TBLproducto\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

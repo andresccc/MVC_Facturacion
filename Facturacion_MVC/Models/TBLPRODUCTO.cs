@@ -11,7 +11,8 @@ namespace Facturacion_MVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLPRODUCTO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,15 +20,24 @@ namespace Facturacion_MVC.Models
         {
             this.TBLDETALLE_FACTURA = new HashSet<TBLDETALLE_FACTURA>();
         }
-    
+
+        [Key]
         public int IdProducto { get; set; }
+        [Display(Name = "Producto")]
         public string StrNombre { get; set; }
+        [Display(Name = "Codigo")]
         public string StrCodigo { get; set; }
+        [Display(Name = "Precio compra")]
         public double NumPrecioCompra { get; set; }
+        [Display(Name = "Precio venta")]
         public double NumPrecioVenta { get; set; }
+        [Display(Name = "Categoria")]
         public int IdCategoria { get; set; }
+        [Display(Name = "Detalle")]
         public string StrDetalle { get; set; }
+        [Display(Name = "URL Foto")]
         public string strFoto { get; set; }
+        [Display(Name = "Stock")]
         public Nullable<int> NumStock { get; set; }
         public System.DateTime DtmFechaModifica { get; set; }
         public string StrUsuarioModifica { get; set; }
